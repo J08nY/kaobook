@@ -58,17 +58,6 @@
 % Load biblatex
 \RequirePackage{biblatex}
 
-% Remove some unwanted entries from the bibliography
-\AtEveryBibitem{
-	\clearfield{issn}
-	\clearfield{isbn}
-	\clearfield{archivePrefix}
-	\clearfield{arxivId}
-	\clearfield{pmid}
-	\clearfield{eprint}
-	\ifentrytype{online}{}{\ifentrytype{misc}{}{\clearfield{url}}}
-	\ifentrytype{book}{\clearfield{doi}}{}
-}
 
 % Convert months to integers
 \DeclareSourcemap{
