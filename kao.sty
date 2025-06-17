@@ -576,27 +576,6 @@
 \def\textfraction{0.35}%
 \def\floatpagefraction{0.8}%
 
-% Make an env that temporarily redefines the figure placing params.
-\NewDocumentEnvironment{floatparamsenv}{mmmm}
-{%
-	% #1 = topfraction, #2 = bottomfraction, #3 = textfraction, #4 = floatpagefraction
-	\edef\orig@topfraction{\the\topfraction}
-	\edef\orig@bottomfraction{\the\bottomfraction}
-	\edef\orig@textfraction{\the\textfraction}
-	\edef\orig@floatpagefraction{\the\floatpagefraction}
-	%
-	\renewcommand{\topfraction}{#1}
-	\renewcommand{\bottomfraction}{#2}
-	\renewcommand{\textfraction}{#3}
-	\renewcommand{\floatpagefraction}{#4}
-}
-{%
-	\renewcommand{\topfraction}{\orig@topfraction}
-	\renewcommand{\bottomfraction}{\orig@bottomfraction}
-	\renewcommand{\textfraction}{\orig@textfraction}
-	\renewcommand{\floatpagefraction}{\orig@floatpagefraction}
-}
-
 % Set the space between floats and main text
 \renewcommand\FBaskip{.4\topskip}%
 \renewcommand\FBbskip{\FBaskip}%
